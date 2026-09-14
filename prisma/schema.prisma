@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Guest {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  name      String
+  phone     String?
+  createdAt DateTime @default(now())
+  rsvps     Rsvp[]
+}
+
+model Rsvp {
+  id         String   @id @default(cuid())
+  guestId    String?
+  guest      Guest?   @relation(fields: [guestId], references: [id], onDelete: SetNull)
+  name       String
+  attending  Boolean
+  totalGuest Int
+  message    String?
+  createdAt  DateTime @default(now())
+}
+
+model Wish {
+  id        String   @id @default(cuid())
+  name      String
+  message   String
+  createdAt DateTime @default(now())
+}

@@ -1,26 +1,68 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-primary: #1F2E23; /* Darker, richer green for luxury feel */
+  --color-gading: #FBF9F6;
+  --color-emas: #D4AF37;
+  --color-emas-gelap: #B08D57;
+  --color-blush: #F4EBE1;
+  
+  --font-serif: var(--font-cormorant), serif;
+  --font-sans: var(--font-jost), sans-serif;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --animate-shimmer: shimmer 3s linear infinite;
+  --animate-spin-slow: spin 6s linear infinite;
+  --animate-float: float 4s ease-in-out infinite;
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
   }
 }
 
+:root {
+  --background: #FBF9F6;
+  --foreground: #1F2E23;
+}
+
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #B08D57 0%, #D4AF37 50%, #F3E5AB 75%, #D4AF37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .shimmer-line {
+    background: linear-gradient(to right, transparent, #D4AF37, transparent);
+    background-size: 200% auto;
+    height: 1px;
+    width: 100%;
+  }
+
+  .glass-panel-luxury {
+    background: rgba(251, 249, 246, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 8px 32px rgba(31, 46, 35, 0.1);
+  }
+
+  .input-flushed {
+    @apply w-full bg-transparent border-b border-emas-gelap/40 px-2 py-3 rounded-none focus:outline-none focus:border-emas transition-colors duration-300;
+  }
 }
