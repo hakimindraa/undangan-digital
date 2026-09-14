@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import CoverScreen from "@/components/CoverScreen";
 import Hero from "@/components/Hero";
 import CountdownTimer from "@/components/CountdownTimer";
@@ -11,7 +11,7 @@ import WishesList from "@/components/WishesList";
 import Sparkles from "@/components/Sparkles";
 import FloatingMusic from "@/components/FloatingMusic";
 
-export default function PublicPage() {
+function PublicPageContent() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -52,5 +52,13 @@ export default function PublicPage() {
       {/* Floating Music starts playing only after opened */}
       {isOpen && <FloatingMusic isPlayingInitially={true} />}
     </main>
+  );
+}
+
+export default function PublicPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-primary"></div>}>
+      <PublicPageContent />
+    </Suspense>
   );
 }
