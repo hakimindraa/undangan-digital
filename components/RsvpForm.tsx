@@ -7,14 +7,14 @@ import SectionWrapper from "./SectionWrapper";
 export default function RsvpForm() {
   const searchParams = useSearchParams();
   const slug = searchParams.get("to");
-  
+
   const [formData, setFormData] = useState({
     name: slug ? slug.replace(/-/g, " ") : "",
     attending: "yes",
     totalGuest: 1,
     message: "",
   });
-  
+
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
@@ -31,12 +31,12 @@ export default function RsvpForm() {
         body: JSON.stringify({
           ...formData,
           attending: formData.attending === "yes",
-          slug, 
+          slug,
         }),
       });
 
       if (!res.ok) throw new Error("Gagal mengirim konfirmasi");
-      
+
       setSuccess(true);
     } catch (err: any) {
       setError(err.message);
@@ -62,7 +62,7 @@ export default function RsvpForm() {
             <span className="text-4xl mb-4 block">✧</span>
             <h3 className="text-3xl font-serif text-primary mb-4 font-light">Terima Kasih</h3>
             <p className="text-primary/70 font-light leading-relaxed">
-              Konfirmasi kehadiran Anda sangat berarti bagi kami.<br/>
+              Konfirmasi kehadiran Anda sangat berarti bagi kami.<br />
               Sampai jumpa di hari bahagia nanti.
             </p>
           </div>

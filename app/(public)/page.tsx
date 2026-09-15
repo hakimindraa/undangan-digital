@@ -20,7 +20,7 @@ function PublicPageContent() {
     } else {
       document.body.style.overflow = "hidden";
     }
-    
+
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -28,11 +28,22 @@ function PublicPageContent() {
 
   return (
     <main className="w-full relative">
+      {/* Cover Screen - Anda bisa meng-uncomment CoverScreenArch jika ingin desain lengkungan */}
       <CoverScreen onOpen={() => setIsOpen(true)} />
-      
+      {/* <CoverScreenArch onOpen={() => setIsOpen(true)} /> */}
+
       {/* Background magical particles */}
       {isOpen && <Sparkles />}
-      
+
+      {/* Soft Ambient Glow (Cahaya Halus) */}
+      {isOpen && (
+        <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
+          <div className="absolute -top-[20%] -left-[10%] w-[50vw] h-[50vw] bg-emas/10 rounded-full blur-[100px] md:blur-[150px]" />
+          <div className="absolute top-[40%] -right-[15%] w-[60vw] h-[60vw] bg-primary/5 rounded-full blur-[120px] md:blur-[180px]" />
+          <div className="absolute -bottom-[20%] left-[20%] w-[40vw] h-[40vw] bg-emas/10 rounded-full blur-[100px] md:blur-[150px]" />
+        </div>
+      )}
+
       {/* The main content that shows up after opening */}
       <div className={`transition-opacity duration-[1500ms] ease-out ${isOpen ? "opacity-100" : "opacity-0 h-0 overflow-hidden"}`}>
         <Hero />
@@ -41,7 +52,7 @@ function PublicPageContent() {
         <Gallery />
         <RsvpForm />
         <WishesList />
-        
+
         <footer className="bg-primary pt-24 pb-12 text-center text-gading/40 flex flex-col items-center">
           <span className="font-serif text-4xl text-emas/50 mb-8 tracking-tighter">R&J</span>
           <p className="text-xs tracking-[0.3em] uppercase mb-2">Terima Kasih</p>
