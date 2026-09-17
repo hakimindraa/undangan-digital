@@ -20,11 +20,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Undangan Pernikahan Ike & Rendy",
     description: "Kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara pernikahan kami pada Sabtu, 24 Oktober 2026.",
-    url: "https://ndigitalnikah.vercel.app",
     siteName: "Undangan Pernikahan Ike & Rendy",
     images: [
       {
-        url: "https://ndigitalnikah.vercel.app/foto-cover.jpg",
+        url: "/foto-cover.jpg",
         width: 800,
         height: 800,
         alt: "Ike & Rendy",
