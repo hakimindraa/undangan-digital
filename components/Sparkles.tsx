@@ -16,7 +16,7 @@ export default function Sparkles() {
   const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
-    const newParticles = Array.from({ length: 40 }).map((_, i) => ({
+    const newParticles = Array.from({ length: 12 }).map((_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
@@ -28,7 +28,7 @@ export default function Sparkles() {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-40 mix-blend-screen">
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-20">
       {particles.map((p) => (
         <motion.div
           key={p.id}
@@ -38,7 +38,6 @@ export default function Sparkles() {
             top: `${p.y}%`,
             width: p.size,
             height: p.size,
-            boxShadow: `0 0 ${p.size * 2}px #D4AF37`,
           }}
           animate={{
             y: ["0vh", "-100vh"],

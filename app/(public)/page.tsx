@@ -38,14 +38,7 @@ function PublicPageContent() {
       {/* Background magical particles */}
       {isOpen && <Sparkles />}
 
-      {/* Soft Ambient Glow (Cahaya Halus) */}
-      {isOpen && (
-        <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
-          <div className="absolute -top-[20%] -left-[10%] w-[50vw] h-[50vw] bg-emas/10 rounded-full blur-[100px] md:blur-[150px]" />
-          <div className="absolute top-[40%] -right-[15%] w-[60vw] h-[60vw] bg-primary/5 rounded-full blur-[120px] md:blur-[180px]" />
-          <div className="absolute -bottom-[20%] left-[20%] w-[40vw] h-[40vw] bg-emas/10 rounded-full blur-[100px] md:blur-[150px]" />
-        </div>
-      )}
+      {/* Soft Ambient Glow removed to massively improve scroll performance on mobile devices */}
 
       {/* The main content that shows up after opening */}
       <div className={`transition-opacity duration-[1500ms] ease-out ${isOpen ? "opacity-100" : "opacity-0 h-0 overflow-hidden"}`}>

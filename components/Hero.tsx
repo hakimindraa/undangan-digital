@@ -11,8 +11,8 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
 
-  const yText = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
-  const opacityText = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const yText = useTransform(scrollYProgress, [0, 1], ["0px", "100px"]);
+  const opacityText = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
     <div ref={ref} className="relative min-h-screen flex flex-col items-center pt-16 pb-20 md:py-32 overflow-hidden bg-gading">
@@ -22,11 +22,10 @@ export default function Hero() {
         <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-primary/10 to-transparent" />
       </div>
 
-      <motion.div
-        style={{ y: yText, opacity: opacityText }}
-        className="relative z-10 text-center px-6 w-full flex flex-col items-center"
-      >
-        {/* Bismillah Calligraphy */}
+      <div className="relative z-10 text-center px-6 w-full flex flex-col items-center">
+        
+        <motion.div style={{ y: yText, opacity: opacityText }} className="flex flex-col items-center w-full">
+          {/* Bismillah Calligraphy */}
         <div className="mb-6 opacity-80">
           <span className="font-serif text-5xl md:text-6xl text-emas">﷽</span>
         </div>
@@ -42,6 +41,7 @@ export default function Hero() {
         <p className="font-serif text-2xl md:text-3xl italic mb-8 md:mb-12 text-primary/70">
           Sabtu, 24 Oktober 2026
         </p>
+        </motion.div>
 
         {/* Arch Photo Frame */}
         <motion.div
@@ -149,7 +149,7 @@ export default function Hero() {
         <div className="mt-16 md:mt-24 w-full flex justify-center">
           <div className="h-24 w-px bg-gradient-to-b from-emas via-emas to-transparent opacity-50" />
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }
