@@ -15,8 +15,24 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "Undangan Pernikahan",
-  description: "Undangan Pernikahan Digital",
+  title: "Undangan Pernikahan Ike & Rendy",
+  description: "Undangan Pernikahan Digital Ike & Rendy. Sabtu, 24 Oktober 2026",
+  openGraph: {
+    title: "Undangan Pernikahan Ike & Rendy",
+    description: "Kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara pernikahan kami pada Sabtu, 24 Oktober 2026.",
+    url: "https://ndigitalnikah.vercel.app",
+    siteName: "Undangan Pernikahan Ike & Rendy",
+    images: [
+      {
+        url: "https://ndigitalnikah.vercel.app/foto-cover.jpg",
+        width: 800,
+        height: 800,
+        alt: "Ike & Rendy",
+      },
+    ],
+    locale: "id_ID",
+    type: "website",
+  },
 };
 
 export const viewport: Viewport = {
