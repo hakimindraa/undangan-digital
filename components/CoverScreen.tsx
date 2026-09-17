@@ -33,7 +33,7 @@ export default function CoverScreen({ onOpen }: CoverScreenProps) {
           exit={{ opacity: 0, y: "-100%", transition: { duration: 1, ease: [0.76, 0, 0.24, 1] } }}
         >
           {/* Kiri: Foto */}
-          <div className="w-full md:w-1/2 min-h-[55vh] md:h-full relative flex items-center justify-center p-6 md:p-12 group bg-primary overflow-hidden">
+          <div className="w-full md:w-1/2 flex-1 md:h-full relative flex items-center justify-center p-4 md:p-12 group bg-primary overflow-hidden">
 
             {/* Outer subtle glow */}
             <div className="absolute inset-0 bg-gradient-to-br from-emas/5 to-transparent pointer-events-none" />
@@ -44,7 +44,7 @@ export default function CoverScreen({ onOpen }: CoverScreenProps) {
             </div>
 
             {/* Modern Elegant Arch Frame */}
-            <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px] h-[400px] sm:h-[480px] md:h-[600px] flex items-center justify-center mt-8 md:mt-0">
+            <div className="relative w-3/5 sm:w-1/2 max-w-[280px] md:max-w-[400px] aspect-[3/4] md:aspect-auto md:h-[600px] flex items-center justify-center mt-4 md:mt-0">
 
               {/* Offset Wireframes */}
               <div className="absolute inset-0 border border-emas/40 rounded-t-[1000px] rounded-b-2xl transform translate-x-4 -translate-y-4 md:translate-x-6 md:-translate-y-6 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)]" />
@@ -69,7 +69,7 @@ export default function CoverScreen({ onOpen }: CoverScreenProps) {
           </div>
 
           {/* Kanan: Konten Teks & Tombol */}
-          <div className="w-full md:w-1/2 h-1/2 md:h-full flex flex-col items-center justify-center relative p-6 md:p-12">
+          <div className="w-full md:w-1/2 flex-1 md:h-full flex flex-col items-center justify-center relative p-4 md:p-12">
 
             {/* Luxury Floral Background di bagian Kanan */}
             <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none overflow-hidden">
@@ -131,7 +131,7 @@ export default function CoverScreen({ onOpen }: CoverScreenProps) {
               />
 
               <motion.div
-                className="mt-4 md:mt-8 bg-black/20 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-emas/10 w-full max-w-sm"
+                className="mt-4 md:mt-8 bg-black/20 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-emas/10 w-full max-w-[90%] md:max-w-sm"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2.5, duration: 1 }}

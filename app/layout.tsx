@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 
@@ -19,14 +19,21 @@ export const metadata: Metadata = {
   description: "Undangan Pernikahan Digital",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${cormorantGaramond.variable} ${jost.variable} h-full scroll-smooth`}>
-      <body className="min-h-full flex flex-col font-sans bg-gading text-primary antialiased">
+    <html lang="id" className={`${cormorantGaramond.variable} ${jost.variable} h-full scroll-smooth overflow-x-hidden`}>
+      <body className="min-h-full flex flex-col font-sans bg-gading text-primary antialiased overflow-x-hidden">
         {children}
       </body>
     </html>
