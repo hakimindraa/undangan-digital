@@ -15,7 +15,7 @@ export default function Hero() {
   const opacityText = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <div ref={ref} className="relative min-h-screen flex flex-col items-center py-32 overflow-hidden bg-gading">
+    <div ref={ref} className="relative min-h-screen flex flex-col items-center pt-16 pb-20 md:py-32 overflow-hidden bg-gading">
       {/* Abstract elegant background instead of full image */}
       <div className="absolute inset-0 bg-primary/5">
         <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-primary/10 to-transparent" />
@@ -31,7 +31,7 @@ export default function Hero() {
           <span className="font-serif text-5xl md:text-6xl text-emas">﷽</span>
         </div>
 
-        <p className="text-xs md:text-sm tracking-[0.3em] uppercase mb-8 text-emas-gelap font-medium">
+        <p className="text-xs md:text-sm tracking-[0.3em] uppercase mb-4 md:mb-8 text-emas-gelap font-medium">
           Pernikahan
         </p>
 
@@ -39,7 +39,7 @@ export default function Hero() {
           Ike <span className="text-emas">&</span> Rendy
         </h1>
 
-        <p className="font-serif text-2xl md:text-3xl italic mb-12 text-primary/70">
+        <p className="font-serif text-2xl md:text-3xl italic mb-8 md:mb-12 text-primary/70">
           Sabtu, 24 Oktober 2026
         </p>
 
@@ -48,7 +48,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="relative w-56 h-80 md:w-72 md:h-[26rem] mb-20 group"
+          className="relative w-56 h-80 md:w-72 md:h-[26rem] mb-12 md:mb-20 group"
         >
           {/* Decorative Frames */}
           <div className="absolute inset-0 border border-emas/40 rounded-t-full rounded-b-3xl transform translate-x-3 -translate-y-3 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-700 ease-out" />
@@ -79,7 +79,7 @@ export default function Hero() {
         </div>
 
         {/* Couple Profile Section inside Hero */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 relative z-10 mt-32 w-full max-w-5xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 relative z-10 mt-20 md:mt-32 w-full max-w-5xl mx-auto">
           {/* Bride */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -146,7 +146,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <div className="mt-24 w-full flex justify-center">
+        <div className="mt-16 md:mt-24 w-full flex justify-center">
           <div className="h-24 w-px bg-gradient-to-b from-emas via-emas to-transparent opacity-50" />
         </div>
       </motion.div>
